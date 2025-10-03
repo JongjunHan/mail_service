@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 메일 통합 서비스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-naver">NAVER</span>
+                <h1 class="logo-title">Mail</h1>
+            </div>
+            <div class="header-actions" id="headerActions" style="display: none;">
+                <span class="user-info" id="userInfo"></span>
+                <button class="btn btn-secondary" onclick="logout()">로그아웃</button>
+            </div>
+        </header>
+
+        <!-- 로그인 섹션 -->
+        <section class="login-section" id="loginSection">
+            <div class="login-card">
+                <h2 class="section-title">메일 서버 연결</h2>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="username">네이버 아이디</label>
+                        <input type="text" id="username" name="username" placeholder="example@naver.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">앱 비밀번호</label>
+                        <input type="password" id="password" name="password" placeholder="앱 비밀번호 입력" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="openaiKey">OpenAI API 키 (선택)</label>
+                        <input type="password" id="openaiKey" name="openaiKey" placeholder="요약 기능 사용시 필요">
+                        <small class="form-hint">요약 기능을 사용하려면 OpenAI API 키가 필요합니다</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">연결하기</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 메인 섹션 -->
+        <main class="main-section" id="mainSection" style="display: none;">
+            <!-- 메일 목록 패널 -->
+            <div class="panel panel-list">
+                <div class="panel-header">
+                    <h2 class="section-title">메일 목록</h2>
+                    <div class="toolbar">
+                        <select id="mailboxSelect" class="select">
+                            <option value="INBOX">받은편지함</option>
+                            <option value="INBOX/Sent">보낸편지함</option>
+                            <option value="INBOX/Trash">휴지통</option>
+                            <option value="INBOX/Spam">스팸함</option>
+                        </select>
+                        <select id="mailFilter" class="select">
+                            <option value="ALL">전체 메일</option>
+                            <option value="UNSEEN">안읽은 메일</option>
+                            <option value="SEEN">읽은 메일</option>
+                        </select>
+                        <input type="number" id="mailLimit" class="input-small" value="10" min="1" max="100">
+                        <button class="btn btn-primary" onclick="fetchEmails()">조회</button>
+                    </div>
+                </div>
+                <div class="email-list" id="emailList">
+                    <div class="empty-state">
+                        <p>조회 버튼을 눌러 메일을 불러오세요</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메일 상세 패널 -->
+            <div class="panel panel-detail">
+                <div class="panel-header">
+                    <h2 class="section-title">메일 상세</h2>
+                    <button class="btn btn-primary" id="replyBtn" onclick="openReplyModal()" style="display: none;">회신</button>
+                </div>
+                <div class="email-detail" id="emailDetail">
+                    <div class="empty-state">
+                        <p>메일을 선택하면 내용이 표시됩니다</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 요약 패널 -->
+            <div class="panel panel-summary">
+                <div class="panel-header">
+                    <h2 class="section-title">메일 요약</h2>
+                    <div class="toolbar">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="summarizeBody" checked>
+                            본문
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="summarizeAttachments">
+                            첨부파일
+                        </label>
+                        <select id="summaryType" class="select">
+                            <option value="brief">간단</option>
+                            <option value="detailed" selected>상세</option>
+                            <option value="bullet">목록</option>
+                            <option value="korean">한국어</option>
+                        </select>
+                        <select id="modelSelect" class="select">
+                            <option value="gpt-4o-mini" selected>GPT-4o Mini</option>
+                            <option value="gpt-4o">GPT-4o</option>
+                            <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                            <option value="gpt-4">GPT-4</option>
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="summarizeEmail()" id="summarizeBtn" disabled>요약</button>
+                    </div>
+                </div>
+                <div class="summary-content" id="summaryContent">
+                    <div class="empty-state">
+                        <p>메일을 선택하고 요약 버튼을 누르세요</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 회신 모달 -->
+    <div class="modal" id="replyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">메일 회신</h2>
+                <button class="modal-close" onclick="closeReplyModal()">&times;</button>
+            </div>
+            <form id="replyForm" onsubmit="sendReply(event)">
+                <div class="form-group">
+                    <label for="replyTo">받는사람</label>
+                    <input type="email" id="replyTo" name="replyTo" readonly required>
+                </div>
+                <div class="form-group">
+                    <label for="replySubject">제목</label>
+                    <input type="text" id="replySubject" name="replySubject" required>
+                </div>
+                <div class="form-group">
+                    <label for="replyBody">본문</label>
+                    <textarea id="replyBody" name="replyBody" rows="10" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeReplyModal()">취소</button>
+                    <button type="submit" class="btn btn-primary">전송</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 로딩 오버레이 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">처리 중...</p>
+    </div>
+
+    <!-- 알림 토스트 -->
+    <div class="toast" id="toast"></div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

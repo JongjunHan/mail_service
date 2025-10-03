@@ -1,0 +1,2418 @@
+<Html lang="ko-kr">
+<Head>
+    <style>
+        .tile {
+            border: 1px solid#c1cbe0;
+            font-size: 16px;
+            padding: 0;
+            padding-bottom: 24px;
+            max-width: 650px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tileWithoutBottom {
+            border: 1px solid#c1cbe0;
+            font-size: 16px;
+            padding: 0;
+            margin: 0 auto;
+            margin-top: 16px;
+            max-width: 650px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .transparentTile {
+            background-color: transparent;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 650px;
+            border-radius: 8px;
+            width: 100%;
+            border: 0;
+        }
+
+        .table_tile_wrapper {
+            margin: 16px auto 0;
+            max-width: 650px;
+            width: 100%;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Adjust as needed */
+        }
+
+    </style>
+
+    <style>
+    .default-button {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 400px;
+        border-radius: 999px;
+        color: #FFF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .amendmentBanner {
+        border: 1px solid #007e3e;
+        margin: 0 auto 16px;
+        border-radius: 8px;
+        background-color: #F3F9F2;
+        font-size: 14px;
+    }
+
+    .lineBanner {
+        margin-top: 16px;
+    }
+
+    .table_banner {
+        color: #007e3e;
+        width: 100%;
+        border: 0;
+    }
+
+    .td_banner_title {
+        padding: 24px 24px 0px 24px;
+    }
+
+    .td_banner_description {
+        padding: 16px 24px 0px 24px;
+    }
+
+    .p_banner_title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .p_banner_secondary_title {
+        font-weight: bold;
+        font-size: 16px;
+        color: #4a5466
+    }
+
+    .p_banner_secondary_description {
+        font-size: 14px;
+        color: #4a5466
+    }
+
+    .p_Banner_description {
+        font-size: 14px;
+    }
+
+    .td_oatOptedInBanner_logo {
+        padding-top: 32px;
+        padding-left: 24px;
+        padding-bottom: 8px;
+    }
+
+    .img_oatOptedInBanner_logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .img_lineBanner_logo {
+        border-radius: 8px;
+    }
+
+    .vip_card_benefit {
+        font-size: 20px;
+        color: #ffffff
+    }
+
+    .vip_card_bottom_description {
+        font-size: 10px;
+        color: #eff4fc
+    }
+
+    .property_contact_container {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .property_contact_flex_button {
+        margin: 0 3px;
+        /*flex: 1;*/
+        word-break: break-word;
+    }
+
+    .card_item {
+        width: 90%;
+    }
+
+    .card_item_desc {
+        width: 156px;
+    }
+
+    .card_item_block_first {
+        width: 215px;
+        padding-left: 16px;
+        padding-right: 8px;
+    }
+
+    .card_item_block_last {
+        width: 215px;
+        padding-right: 16px;
+        padding-left: 8px;
+    }
+
+    .card_item_block {
+        width: 215px;
+    }
+
+    .aso_panel_row {
+        background-color: #F8F7F9;
+        margin-bottom: 6px;
+    }
+
+    .aso_panel_column {
+        padding: 8px 15px 15px;
+    }
+
+    .aso_sub_title_text {
+        font-size: 14px;
+        font-weight: bold;
+        color: #4a5466;
+    }
+
+    .aso_rate_plan_name_text {
+        font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        padding-top: 12px;
+        color: #2A2A2E;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .aso_sub_title_information {
+        font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 2px;
+        color: #2A2A2E
+    }
+
+    .agoda_vip_benefit_banner {
+        width: 280px;
+    }
+
+    .panel_with_title_banner {
+        padding-left: 24px;
+        text-align: left;
+        font-size: 12px;
+        border-radius: 8px 8px 0 0;
+        vertical-align: middle;
+        height:30px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        font-weight : bold;
+    }
+    .panel_with_title_banner_img {
+        height: 20px;
+        width : 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    td.responsive-cta-text {
+        width: 55%;
+    }
+
+    td.responsive-button {
+        display: block;
+        width: 90%;
+        position: relative;
+    }
+
+    img.cta-icon-size {
+        height: 48px;
+        width: 48px;
+    }
+
+    td.cta-icon {
+        vertical-align: middle;
+    }
+
+    @media screen and (max-width: 600px) {
+        .mobile_padding {
+            padding-right: 16px;
+        }
+
+        .download_app_qr {
+            display: none !important;
+        }
+
+        .card_item {
+            min-width: 100%!important;
+            height: 150px!important;
+        }
+
+        .card_item_list_container {
+            display: grid!important;
+        }
+
+        .card_item_desc {
+            width: 378px!important;
+        }
+
+        .card_item_block {
+            position: relative!important;
+            padding-left: 16px!important;
+            padding-right: 16px!important;
+            width: 93% !important;
+        }
+
+        .card_item_block_last {
+            position: relative!important;
+            padding-left: 16px!important;
+            padding-right: 16px!important;
+            width: 93% !important;
+        }
+
+        .card_item_block_first {
+            position: relative!important;
+            padding-left: 16px!important;
+            padding-right: 16px!important;
+            width: 93% !important;
+        }
+
+        .property_contact_container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .property_contact_flex_button {
+            position: relative;
+            margin-bottom:5px;
+            width: 100% !important;
+        }
+
+        td.responsive-cta-text {
+            display: block;
+            width: 85%;
+            position: relative;
+        }
+
+        td.responsive-button {
+            display: block;
+            width: 88%;
+            position: relative;
+        }
+
+        img.cta-icon-size {
+            height: 32px;
+            width: 32px;
+        }
+
+        td.cta-icon {
+            vertical-align: top;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .agoda_vip_benefit_banner {
+            width: 100%;
+        }
+    }
+
+
+</style>
+<style>
+    .flight-margin-left-s {
+        margin-left: 12px;
+    }
+
+    .flight-p-details {
+        margin: 4px 0px 0px 0px;
+    }
+
+    .flight-p-details-light {
+        margin: 5px 0px;
+        color: #6B7388;
+        font-size: 12px;
+    }
+
+    .flight-padding-left-s {
+        padding-left: 12px;
+    }
+
+    .flight-padding-left-m {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .flight-margin-left-m {
+        margin-left: 24px;
+    }
+
+    .flight-p-cross-line {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid#C1CBE0;
+        line-height: 0.1em;
+        margin: 16px 0px 0px 0px;
+    }
+
+    .cross-line-margin-top-bottom-16-px {
+        margin: 16px 0 16px;
+    }
+
+    .cross-line-margin-passenger {
+        margin: 12px 0px;
+    }
+
+    .flight-table-info {
+        width: 100%;
+    }
+
+    .flight-tr-info {
+        text-align: center;
+    }
+
+    .flight-td-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flight-td-content-height-1 {
+        height: 16px;
+        line-height: 16px;
+    }
+
+    .flight-td-content-height-2 {
+        height: 24px;
+        line-height: 24px;
+    }
+
+    .flight-p-heading-3 {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .flight-p-body-2-strong {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .flight-p-body-2 {
+        font-size: 14px;
+    }
+
+    .flight-p-caption-1 {
+        font-size: 12px;
+    }
+
+    .flight-p-caption-1-grey {
+        font-size: 12px;
+        color: #6B7388
+    }
+
+    .flight-divider {
+        margin: 12px 0px;
+        border-top: 1px solid#C1CBE0;
+    }
+
+    .flight-td-banner-description {
+        padding: 0px 24px;
+    }
+
+    .flight-p-heading-margin-bottom {
+        margin-bottom: 16px;
+    }
+
+    .flight-td-logo {
+        vertical-align: top;
+        min-width: 26px;
+    }
+
+    .flight-img-airline-logo {
+        width: 24px;
+        object-fit: contain;
+    }
+
+    .flight-segment-header-table {
+        border-spacing: 0px;
+    }
+
+    .flight-segment-header-table-td {
+        padding: 0px;
+    }
+
+    .flight-segment-header-td-logo {
+        vertical-align: top;
+        padding-right: 8px;
+    }
+
+    .flight-segment-p {
+        margin: 0px 0px 4px 0px;
+    }
+
+    .flight-img-direction {
+        width: 15px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .flight-type-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .flight-table-logo-and-code {
+        width: 120px;
+        float: left;
+    }
+
+    .flight-table-slice {
+        width: 180px;
+        float: left;
+    }
+
+    .flight-table-direction-and-duration {
+        width: 70px;
+        float: left;
+    }
+
+    .flight-span-layover {
+        background: #fff;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .flight-img-airline-small-logo {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        object-position: bottom;
+    }
+
+    .flight-img-right-arrow {
+        width: 10px;
+        height: 10px;
+        object-fit: contain;
+    }
+
+    .flight-img-seat {
+        width: 12px;
+        height: 12px;
+        object-fit: contain;
+    }
+
+    .flight-p-body-seat {
+        font-size: 14px;
+        margin: 2px 0px;
+    }
+
+    .flight-icon {
+        width: 17px;
+        height: 17px;
+        object-fit: contain;
+    }
+
+    .flight-li-p {
+        margin: 1px;
+    }
+
+    .flight-baggage-route {
+        padding-top: 8px;
+    }
+</style>
+<style>
+    @media only screen and (min-width:601px) {
+        .property-cross-sell-card,
+        .property-cross-sell-img,
+        .property-cross-sell-img-td {
+            width: 293px !important;
+            min-width: 293px !important;
+            max-width: 293px !important;
+        }
+        .property-cross-sell-card {
+            height: 269px !important;
+            min-height: 269px !important;
+            max-height: 269px !important;
+        }
+        .property-cross-sell-img,
+        .property-cross-sell-img-td {
+            height: 96px !important;
+            min-height: 96px !important;
+            max-height: 96px !important;
+        }
+        .property-cross-sell-title {
+            max-height: 18px !important;
+            overflow: hidden !important;
+            display: block !important;
+        }
+    }
+    @media only screen and (max-width:600px) {
+        .property-cross-sell-card,
+        .property-cross-sell-img,
+        .property-cross-sell-img-td {
+            width: 160px !important;
+            min-width: 160px !important;
+            max-width: 160px !important;
+        }
+        .property-cross-sell-card {
+            height: 289px !important;
+            min-height: 289px !important;
+            max-height: 289px !important;
+            vertical-align:top !important;
+        }
+        .property-cross-sell-img,
+        .property-cross-sell-img-td {
+            height: 104px !important;
+            min-height: 104px !important;
+            max-height: 104px !important;
+        }
+        .property-cross-sell-title {
+            max-height: 18px !important;
+            overflow: hidden !important;
+            display: block !important;
+        }
+        .property-cross-sell-review-desktop { display: none !important; }
+        .property-cross-sell-review-mobile { display: table-row !important; }
+    }
+</style>
+
+<style>
+    @media only screen and (max-width: 480px) {
+        .cross-sell-activity-image {
+            width: 86px !important;
+            height: 132px !important;
+        }
+        .cross-sell-activity-name {
+            width: 100% !important;
+            -webkit-line-clamp: 3 !important;
+            line-clamp: 3 !important;
+            max-height: 51px !important;
+        }
+        .cross-sell-activity-item-gutter {
+            height: 8px !important;
+            line-height: 8px !important;
+            font-size: 8px !important;
+        }
+        .cross-sell-activity-content, .cross-sell-activity-content-box {
+            height: 132px !important;
+        }
+        .cross-sell-activity-name-row, .cross-sell-activity-name-col {
+            height: 72px !important;
+        }
+        .cross-sell-activity-name-wrap, .cross-sell-activity-name-table {
+            height: 72px !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .cross-sell-flight-criteria-subtitle {
+            width: 223px !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .cross-sell-hotel-criteria-subtitle {
+            width: 223px !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .vehicle_panel_divider {
+            width: 8px !important;
+            min-width: 8px !important;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .cross-sell-panel-container {
+            padding: 16px !important;
+        }
+    }
+</style>
+
+
+</Head>
+<body style="width:100%;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0;background-color: #eff4fc; margin: 0;color: #252c38;box-sizing: border-box;">
+<div style="background-color: #eff4fc;">
+
+
+
+
+
+
+<style>
+    a:visited {
+        color: inherit;
+    }
+</style>
+
+
+    <table border=0 align="center" cellspacing=0 cellpadding=0
+           style="background-color: transparent;padding: 0; margin: 0 auto;max-width: 650px;border-radius: 8px;">
+        <tbody>
+        <tr>
+            <td style="height: 32px; line-height: 32px;">
+                &nbsp;
+            </td>
+        </tr>
+        <tr style=" text-align: center;">
+            <td style="padding:0;margin:0;">
+                    <img id="imgLogoUrlSrcAndAlt" height="40" role="img"
+                         src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/company_logo_header.png" alt="Agoda Logo" aria-label="Agoda Logo" lang="en"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 32px; line-height: 32px;">
+                &nbsp;
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+           align="center">
+        <tr>
+            <td
+                    
+                    class="tile" bgcolor="white"
+                    style="border-top: 6px solid #007e3e;border-radius: 8px;padding-bottom: 24px;border-left:1px solid #c1cbe0;border-right:1px solid #c1cbe0;border-bottom:1px solid #c1cbe0;">
+        <table border=0 cellspacing=0 align="center" cellpadding=0
+               id="confirmation-info-section">
+            <tr>
+                <td colspan="3" style="height: 24px; line-height: 24px;margin:0;padding:0">
+                    &nbsp;
+                </td>
+            </tr>
+                <tr style="text-align: center;">
+                    <td colspan="3"
+                        style="padding:0;padding-left: 24px; padding-right: 24px; padding-top: 12px;font-size: 20px; font-weight: bold; color:#007e3e;">
+    <h2 style="font-weight: bold; font-size: 20px;">고객님의 예약이 확정되었습니다.</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 32px; line-height: 32px;margin:0;padding:0">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="3" style="padding-left: 24px; padding-right: 24px;">
+                        <p style="margin:0; padding:0" id="message1">고객님, 안녕하세요.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 16px; line-height: 16px;margin:0;padding:0">
+                        &nbsp;
+                    </td>
+                </tr>
+                    <tr style="text-align: center;">
+                        <td colspan="3" style="padding-left: 24px; padding-right: 24px;">
+                            <p style="margin:0; padding:0" id="message2">예약 번호는 1643647854이며, 아래 버튼으로 연결되는 셀프서비스 예약 관리 기능을 이용해 예약 정보 확인, 예약 취소, 예약 변경을 하실 수 있습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="height: 16px; line-height: 16px;margin:0;padding:0">
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr style="text-align: center;">
+                        <td colspan="3" style="padding-left: 24px; padding-right: 24px; font-weight: 400;">
+                            <p style="margin:0; padding:0" id="subtext_0">고객님의 숙소 예약이 확정되었습니다. 첨부된 예약 확정서 정보를 확인해 주시기 바랍니다. 예약에 대한 주요 업데이트 사항 발생 시 이메일로 연락드리겠습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="line-height: 16px;margin:0;padding:0">
+                            &nbsp;
+                        </td>
+                    </tr>
+            <tr style="text-align: center;">
+    <!--[if mso]>
+    <td width="20%"></td>
+    <td style="background-color: #2067da; padding: 8px;" width="60%">
+    <a id="" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26" target="_blank"
+       style="display: inline-block;margin: 0 auto; border-radius:999px; color: #ffffff; font-size: 16px; font-weight: normal; background-color:#2067da;  text-decoration: none;">
+    예약 관리하기
+    </a>
+    </td>
+    <td width="20%"></td>
+    <![endif]-->
+    <!--[if !mso]><!-->
+    <td colspan="2">
+    <div style="display: block; width: 100%">
+        <span style="display: inline-block; margin-top: 4px; padding:1px;">
+            <a id="" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26" target="_blank" class="default-button"
+               style="
+                   background-color: #2067da;
+                   padding: 12px 60px;
+                   font-size: 16px;
+                   font-weight: normal;
+                   color: #ffffff;
+                   border-radius: 999px;
+                   text-decoration: none;
+                   border: 1px solid #ffffff
+               "
+            >
+                예약 관리하기
+            </a>
+        </span>
+    </div>
+    </td>
+    <!--<![endif]-->
+    </tr>
+
+        </table>
+            </td>
+        </tr>
+    </table>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+        <center>
+            <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;">
+                <tbody>
+                <tr>
+                    <td id="single_property_booking_information" class="tile" bgcolor="white"
+                        style="padding-bottom: 24px;border-radius: 8px;border:1px solid #c1cbe0;">
+    <table style="width: 100%">
+        <tr>
+            <td style="height: 24px; line-height: 24px;margin:0;padding:0">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:0;Margin:0;padding-left: 24px; padding-right: 24px;" id="property-name">
+                 <span style="display: inline-block; font-size: 18px;">
+                    <h2 style="font-size: 1em" id="lblHotelNameData">Hilton Tokyo</h2>
+                 </span>
+                    <img border="0" src="http://img.agoda.net/content/default/documents/images/ebe/orange-yellow_star-5@2x.png" width="auto" height="14" alt="5.0 stars rating out of five" style="display: inline-block;">
+            </td>
+        </tr>
+        <tr>
+            <td align="left"
+                style="text-align: left;padding:0;Margin:0; font-size: 16px; padding-left: 24px; padding-right: 24px;">
+                <p id="lblLocalHotelNameData" style="margin:0;padding:0">
+                    ヒルトン東京
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:0;Margin:0;padding-top:12px;">
+                <table border=0 cellspacing=0 cellpadding=0>
+                    <tbody>
+                    <tr>
+                        <td
+                                style="margin:0; padding: 0 8px 0 24px; vertical-align: top;"
+                        width="128" height="128">
+                            <img role="img" aria-label="property image" src="http://pix8.agoda.net/hotelImages/2287709/0/ad3b954ef8bb8498fbdc23a93998de72.jpeg?ce=0&s=450x378" alt="property image"
+                                 style="display:block;width: 128px;height: 128px;object-fit: cover;border-radius: 16px;"
+                                 width="128" height="128">
+                        </td>
+                        <td
+                                style="padding:0;Margin:0;padding-left: 8px; padding-right: 24px; vertical-align: top;">
+                            <table border=0 cellspacing=0 cellpadding=0>
+                                <tbody>
+                                <tr>
+                                    <td style="padding:0; margin:0; font-size: 14px;">
+                                        <p id="lblHotelAddressData" style="margin:0;padding:0">
+                                            Tokyo-to, Shinjuku-ku, Nishishinjuku 6-6-2, Japan, 도쿄 / 동경, 일본, 160-0023
+                                        </p>
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td style="padding:0; margin:0;padding-top: 8px">
+                                              <p id="lblLocalHotelAddressData" style="margin:0;padding:0;font-size: 14px;" lang=ko-kr>
+                                                東京都, 新宿区西新宿6-6-2, 東京, 日本, 160-0023
+                                              </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                                style="padding:0;Margin:0;padding-top:8px">
+                                            <a id="linkDirection"
+                                               href="https://www.google.com/maps/search/?api=1&query=Hilton+Tokyo%2C+Tokyo-to%2C+Shinjuku-ku%2C+Nishishinjuku+6-6-2%2C+Japan%2C+%EC%8B%A0%EC%A3%BC%EC%BF%A0%2C+%EB%8F%84%EC%BF%84+%2F+%EB%8F%99%EA%B2%BD%2C+%EC%9D%BC%EB%B3%B8%2C+160-0023"
+                                               target="_blank"
+                                               style="Margin:0;line-height:19px;color:#2067da; text-decoration: underline; font-size:14px">
+                                                숙소 위치 확인
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:0;padding-left: 24px;padding-right: 24px;padding-top:16px">
+                <table border=0 cellspacing=0 cellpadding=0 style="width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td
+                                style="margin: 0; padding: 0; border-top: 1px solid #c1cbe0;height: 16px; line-height: 16px;">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:0;Margin:0;padding-left: 24px;padding-right: 24px;">
+                <table border=0 cellspacing=0 cellpadding=0 style="width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td
+                                style="padding:0;Margin:0; padding-right: 24px; border-right: 1px solid #c1cbe0; width:50%;  vertical-align: top;">
+                            <table align="left" border=0 cellspacing=0 cellpadding=0>
+                                <tbody>
+                                <tr>
+                                    <td align="left"
+                                        style="padding:0;Margin:0; font-size: 14px; color:#4a5466; text-align: left;">
+                                        <p style="margin:0;padding:0">
+                                            체크인
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left"
+                                        style="padding:0;Margin:0; text-align: left;padding-top: 8px;"
+                                        id="checkin-date">
+                                        <p style="margin:0;padding:0">
+                                            2025년 9월 09일 (화요일)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left"
+                                        style="padding:0;Margin:0; text-align: left;padding-top: 8px;"
+                                        id="checkin-time">
+                                        <p style="margin:0;padding:0">
+                                            15:00
+                                        </p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td
+                                style="padding:0;Margin:0; padding-left: 24px; width: 50%; vertical-align: top;">
+                            <table align="right" border=0 cellspacing=0 cellpadding=0>
+                                <tbody>
+                                <tr>
+                                    <td align="right"
+                                        style="padding:0;Margin:0; font-size: 14px; color:#4a5466; text-align: right;">
+                                        <p style="margin:0;padding:0">
+                                            체크아웃
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right"
+                                        style="padding:0;Margin:0; padding-top:8px ; text-align: right;"
+                                        id="checkout-date">
+                                        <p style="margin:0;padding:0">
+                                            2025년 9월 12일 (금요일)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right"
+                                        style="padding:0;Margin:0; text-align: right;padding-top: 8px;"
+                                        id="checkout-time">
+                                        <p style="margin:0;padding:0">
+                                            11:00
+                                        </p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-left: 24px;padding-right: 24px;">
+                <table border=0 cellspacing=0 cellpadding=0 style="width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td
+                                style="margin: 0; padding: 0; border-bottom: 1px solid #c1cbe0;height: 16px; line-height: 16px;">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="padding:0;padding-left: 24px;padding-right: 24px; padding-top: 16px">
+                <p style="margin:0;padding:0; font-size: 14px;">
+                    <a style='color:#2067da;' href='https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26' target='_blank'>예약 관리하기</a> 페이지에서 숙소 정책과 편의 시설/서비스에 관해서도 쉽게 확인할 수 있습니다.
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+      <table >
+              <tr>
+                  <td style="padding:0;Margin:0;padding-left: 24px; padding-right: 28px; padding-top: 28px;">
+                         <span style="display: inline-block; font-size: 18px;">
+                             <h3 style="font-size: 1em">숙소에 연락하기</h3>
+                         </span>
+                  </td>
+              </tr>
+          <tr>
+            <td style="padding:0; padding-left: 24px;padding-right: 24px; padding-top: 10px;">
+              <p style="margin:0;padding:0; text-decoration: none; font-size: 14px;">
+                숙소와 관련한 더 자세한 사항은 숙소로 직접 문의해 주시기 바랍니다.
+              </p>
+            </td>
+          </tr>
+      </table>
+                <table style="width: 100%; table-layout: fixed; align-items: center;" cellspacing="10">
+                    <tr class="property_contact_container">
+                            <td class="property_contact_flex_button" style="width: 50%;box-sizing: border-box;">
+    <table align="center" cellpadding="0" cellspacing="0" style="width: 100%;">
+        <tr style="background-color: #ffffff;">
+            <td align="center"
+                style="margin:0; width: 100%;padding:8px;border: 1px #2067da solid;border-radius: 10px;"
+                id="property-phone">
+                <table style="width: 100%; box-sizing: border-box;">
+                        <tr style="text-align: center">
+                            <td width="20" style="vertical-align: middle;">
+                                <img src="https://cdn6.agoda.net/images/email/booking-confirmation/pigeon/phone2.png"
+                                     alt="phone icon" width="20">
+
+                            </td>
+                        </tr>
+                    <tr style="text-align: center">
+                        <td>
+                            <a style="margin:0;padding:0;text-align: center;display: inline;text-decoration: none;padding-top:4px;" href="tel:+81333445111"
+                               target="_blank" >
+                                <p style="flex-wrap: wrap;word-break: break-word;font-size: 14px; color: #2067da;">+81333445111</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                            </td>
+                            <td class="property_contact_flex_button" style="width: 50%;box-sizing: border-box;">
+    <table align="center" cellpadding="0" cellspacing="0" style="width: 100%;">
+        <tr style="background-color: #ffffff;">
+            <td align="center"
+                style="margin:0; width: 100%;padding:8px;border: 1px #2067da solid;border-radius: 10px;"
+                id="property-email">
+                <table style="width: 100%; box-sizing: border-box;">
+                        <tr style="text-align: center">
+                            <td width="20" style="vertical-align: middle;">
+                                <img src="https://cdn6.agoda.net/images/email/booking-confirmation/pigeon/envelope2.png"
+                                     alt="envelope icon" width="20">
+
+                            </td>
+                        </tr>
+                    <tr style="text-align: center">
+                        <td>
+                            <a style="margin:0;padding:0;text-align: center;display: inline;text-decoration: none;padding-top:4px;" href="mailto:tokyo_reservations@hilton.com"
+                               target="_blank" >
+                                <p style="flex-wrap: wrap;word-break: break-word;font-size: 14px; color: #2067da;">tokyo_reservations@hilton.com</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                            </td>
+                    </tr>
+                </table>
+
+        <table style="padding:0; padding-left: 24px;padding-right: 24px; padding-top: 16px;"> 
+            <tr>
+                <td style="padding: 0;margin:0;">
+                    <p style="color:#737373;padding: 0;margin: 0;font-weight: bold;font-size: 14px;">
+                        [ 중요 사항 ] 
+                    </p>
+                </td>
+            </tr>
+                <tr>
+                    <td style="margin:0;padding:0;padding-top:12px">
+                        <p id="propertyImportantNotes_0"
+                           style="color:#737373;padding:0;margin:0;font-size:14px;">
+                            The fitness center will be undergoing bathroom maintenance from September 16, 2025 – October 1, 2025. <br>
+The Men’s and Women’s bathrooms, sauna and locker rooms will be unavailable during this period.<br>
+<br>
+フィットネスセンターメンテナンスのお知らせ<br>
+2025年9月16日（火）から10月1日（水）までの期間、男性用・女性用バスルームのメンテナンスのため<br>
+バスルーム、サウナ、ロッカールームはご利用いただけません。
+
+
+                        </p>
+                    </td>
+                </tr>
+        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+        <center>
+            <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;">
+                <tr>
+                    <td class="tile mobile_padding" bgcolor="white"
+                        style="padding-bottom: 24px;border-radius: 8px;border:1px solid #c1cbe0;">
+                        <table border=0 cellspacing=0 cellpadding=0 align="center"
+                               style="width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td colspan="4" style="height: 24px; line-height: 24px;margin:0;padding:0"> &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="Margin:0;padding: 0 24px;">
+                                <span style="display: inline-block;font-size: 20px;font-weight: bold;">
+                                    도쿄 / 동경 여행을 더 다채롭게 즐겨보세요
+                                </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 16px; line-height: 16px;margin:0;padding:0"> &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="Margin:0;padding: 0 24px;">
+                                    <p style="margin: 0;padding: 0; font-size: 14px;">
+                                        도쿄 / 동경의 인기 액티비티 최대 10% 추가 할인
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height:16px;line-height:16px;margin:0;padding:0">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <!--[if mso]>
+                            <tr>
+                                <td>
+                                    <table width="100%" cellspacing="36px">
+                            <![endif]-->
+                                <tr class="card_item_list_container">
+                                            <!--[if mso]>
+                                        <td class="card_item_block_first" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_first"
+                                                style=" width: 139px;padding-left: 16px;padding-right: 4px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_Activities_Tour"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#f3efd8;border-radius: 16px;position: relative;width: 100%;height: 135px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_Activities_Tour" role="img" src="https://cdn0.agoda.net/images/emailmarketing/activities/activity_category_tour.png"
+                     alt="tours" aria-label="tours" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_Activities_Tour" href="https://www.agoda.com/activities/search?cid=1927257&cityId=5085&category=11"
+                   style="Margin:0;color:#0d1118;text-decoration:none">
+                    투어
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block" style="width: 139px; padding-left: 4px; padding-right: 4px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_Activities_Transportation"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#f3efd8;border-radius: 16px;position: relative;width: 100%;height: 135px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_Activities_Transportation" role="img" src="https://cdn0.agoda.net/images/emailmarketing/activities/activity_category_transport.png"
+                     alt="transportation" aria-label="transportation" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_Activities_Transportation" href="https://www.agoda.com/activities/search?cid=1927257&cityId=5085&category=7"
+                   style="Margin:0;color:#0d1118;text-decoration:none">
+                    교통편
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block" style="width: 139px; padding-left: 4px; padding-right: 4px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_Activities_Attractions"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#f3efd8;border-radius: 16px;position: relative;width: 100%;height: 135px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_Activities_Attractions" role="img" src="https://cdn0.agoda.net/images/emailmarketing/activities/activity_category_attraction.png"
+                     alt="attractions" aria-label="attractions" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_Activities_Attractions" href="https://www.agoda.com/activities/search?cid=1927257&cityId=5085&category=3"
+                   style="Margin:0;color:#0d1118;text-decoration:none">
+                    관광 명소
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block_last" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_last" style="width: 139px;padding-right: 16px;padding-left: 4px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_Activities_Sim"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#f3efd8;border-radius: 16px;position: relative;width: 100%;height: 135px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_Activities_Sim" role="img" src="https://cdn0.agoda.net/images/emailmarketing/activities/activity_category_sim.png"
+                     alt="sim & wifi" aria-label="sim & wifi" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_Activities_Sim" href="https://www.agoda.com/activities/search?cid=1927257&cityId=5085&category=12"
+                   style="Margin:0;color:#0d1118;text-decoration:none">
+                    SIM 카드 & Wifi
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                </tr>
+                            <!--[if mso]>
+                            </table>
+                            </td>
+                            </tr>
+                            <![endif]-->
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;">
+        <tr>
+            <td class="tile" bgcolor="white" style="padding-bottom: 24px;border-radius: 8px;border:1px solid #c1cbe0">
+                <table style="width: 100%">
+                    <tr>
+                        <td colspan="3"
+                            style="padding:0;margin:0;padding-left:24px;padding-right:24px;padding-top:24px;font-weight: bold; font-size: 18px; line-height: 21px;">
+                            <h2 style="font-size: 1em">예약 세부 사항</h2> 
+                        </td>
+                    </tr>
+                    <tr id="property_booking_information">
+                        <td colspan="1"
+                            style="width: 160px; padding: 16px 18px 10px 24px; color: #252c38; line-height: 25px; vertical-align: top;">
+                            객실 수 및 숙박 수 
+                        </td>
+                        <td colspan="2"
+                            style="padding: 16px 18px 10px 0; line-height: 25px; color: #252c38; vertical-align: top;"
+                            id="booking-reservation">
+                            객실 1개, 3박
+                        </td>
+                    </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:0 24px 0 24px;margin:0" colspan="3">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                    <tr>
+                    <tr>
+                        <td colspan="1"
+                            style="width: 160px; padding: 10px 18px 10px 24px; color: #252c38; line-height: 25px; vertical-align: top;">
+                            객실 종류 
+                        </td>
+                        <td colspan="2"
+                            style="padding: 10px 18px 10px 0; line-height: 25px; color: #252c38; vertical-align: top;"
+                            id="booking-roomtype">
+                            Twin Premium With Sofa Bed
+                        </td>
+                    </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:0 24px 0 24px;margin:0" colspan="3">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                    <tr>
+                        <td colspan="1"
+                            style="width: 160px; padding: 10px 18px 10px 24px; color: #252c38; line-height: 25px; vertical-align: top;">
+                            대표 투숙객 
+                        </td>
+                        <td colspan="2"
+                            style="padding: 10px 18px 10px 0; line-height: 25px; color: #252c38; vertical-align: top;"
+                            id="booking-leadguest">
+                            Han Jongil
+                        </td>
+                    </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:0 24px 0 24px;margin:0" colspan="3">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                    <tr>
+                        <td colspan="1"
+                            style="width: 160px; padding: 10px 18px 10px 24px; color: #252c38; line-height: 25px; vertical-align: top;">
+                            숙박 인원 
+                        </td>
+                        <td colspan="2"
+                            style="padding: 10px 18px 10px 0; line-height: 25px; color: #252c38; vertical-align: top;"
+                            id="booking-occupancy">
+                            성인 3명
+                        </td>
+                    </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:0 24px 0 24px;margin:0" colspan="3">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                        <tr>
+                            <td colspan="1"
+                                style="width: 160px; padding: 10px 18px 10px 24px; color: #252c38; vertical-align: top; line-height: 25px;">
+                                혜택 
+                            </td>
+                            <td colspan="2"
+                                style="padding: 10px 18px 10px 0; line-height: 25px; vertical-align: top;"
+                                id="booking-basic-benefits">
+                            </td>
+                        </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:0 24px 0 24px;margin:0" colspan="3">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+                            <tr>
+                                <td colspan="1"
+                                    style="width: 160px; padding: 10px 18px 10px 24px; color: #252c38; line-height: 25px; vertical-align: top;">
+                                    특별 요청 사항 
+                                </td>
+                                <td colspan="2"
+                                    style="padding: 10px 18px 10px 0; line-height: 25px; color: #252c38; vertical-align: top;"
+                                    id="booking-specialrequest">
+                                        I'd like a non-smoking room, I'd like to stay on a high floor, I'd like twin beds, I'd like a quiet room, we are totally 3people visit  so please prepare the 3 bed! and if possible please prepare the high floor room!
+                                </td>
+                            </tr>
+                                                            <tr>
+                                    <td colspan="3"
+                                        style="color: #4a5466; line-height: 20px; padding:0;padding-left:24px;padding-bottom:10px">
+                                        (모든 특별 요청 사항 반영 여부는 체크인 시 숙소 여건에 따라 달라질 수 있습니다.)
+                                    </td>
+                                </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+           align="center">
+        <tr>
+            <td
+                     id="cart-price-breakdown-panel" 
+                    class="tile" bgcolor="white"
+                    style="border-top: ;border-radius: 8px;padding-bottom: 24px;border-left:1px solid #c1cbe0;border-right:1px solid #c1cbe0;border-bottom:1px solid #c1cbe0;">
+        <table border=0 cellspacing=0 align="center" cellpadding=0 width="100%">
+                <tr>
+                    <td colspan="" style="padding: 0; margin: 0;">
+                        <div class="panel_with_title_banner"
+                             style="background-color: #e2f2e5; color: #007e3e;">
+                                <img class="panel_with_title_banner_img" src="https://cdn6.agoda.net/images/email/common/green_check_mark_2x.png" alt=""/>
+                            예약 확정 및 결제 완료
+                        </div>
+                    </td>
+                </tr>
+            <tr>
+        <td style="margin:0;padding: 24px 24px 0;text-align: left"
+                 id="cart-price-breakdown-panel-title" 
+                
+        >
+    <h2 style="font-weight: bold; font-size: 18px;">결제 정보 </h2>
+        </td>
+            </tr>
+            <tr>
+                <table width="100%" cellpadding="0" cellspacing="0" style="padding: 0;margin: 0;">
+                    <tr id="title_pbd_spacing" style="height: 16px;">
+                        <td colspan="3" style="height: 16px;"></td>
+                    </tr>
+            <tr id="cart-pricebreakdown-section-title-row">
+            </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #252c38; font-weight: bold;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    객실
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: ; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text">
+                    
+                </td>
+        </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    객실 1개 x 3박
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text-base-price">
+                    ₩ 1,493,982
+                </td>
+        </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    세금 및 봉사료
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text-tax-and-fee">
+                    ₩ 379,959
+                </td>
+        </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #007e3e; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    아고다 앱 3번째 예약 할인 쿠폰 2.134992622049869%
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: #007e3e; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text-discount">
+                    -₩ 31,890
+                </td>
+        </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:12px 24px 12px 24px;margin:0" colspan="6">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+            <tr id="cart-pricebreakdown-section-title-row">
+                    <td colspan="3"
+                        style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 16px; color: #252c38; font-weight: bold;"
+                        id="cart-pricebreakdown-section-title-text">
+                        총 금액
+                    </td>
+                    <td colspan="3"
+                        style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 16px; color: #E03126; font-weight:bold;"
+                        id="cart-pricebreakdown-section-price-text">
+                        ₩ 1,842,051
+                    </td>
+            </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #5e6b82; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    세금 및 제반요금 포함
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: ; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text">
+                    
+                </td>
+        </tr>
+<tr style="border-collapse:collapse;">
+    <td align="left" style="padding:12px 24px 12px 24px;margin:0" colspan="6">
+        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+            <tr style="border-collapse:collapse;">
+                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;">
+                        <tr style="border-collapse:collapse;">
+                            <td align="center" style="padding:0;margin:0">
+                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border-spacing:0px;">
+                                    <tr style="border-collapse:collapse;">
+                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:1px solid #c1cbe0;background:none;height:1px;width:100%;margin:0px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+            <tr id="cart-pricebreakdown-section-title-row">
+            </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #252c38; font-weight: bold;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    오늘 결제됨
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text-pay-now">
+                    ₩ 1,842,051
+                </td>
+        </tr>
+        <tr id="cart-pricebreakdown-section-subitem-row">
+                <td colspan="3"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-left-text">
+                    결제 수단
+                </td>
+                <td colspan="3"
+                    style="width:30%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; text-align: right; font-size: 14px; color: #252c38; font-weight: normal;"
+                    id="cart-pricebreakdown-section-subitem-right-text-pay-now-card">
+                    ••••3602
+                </td>
+        </tr>
+        <tr id="cart-pricebreakdown-section-subitem-descriptiontext-row">
+                <td colspan="6"
+                    style="width:70%;word-wrap: break-word; hyphens: auto; position:relative;padding: 0px 24px 0px 24px; line-height: 25px; vertical-align: top; font-size: 12px; padding-top: 10px; padding-bottom: 10px; color: #5e6b82; font-weight: normal; line-height: normal"
+                    id="cart-pricebreakdown-section-subitem-descriptiontext-text">
+                    <br><br><strong>도시세 관련 안내</strong><br><br>현지 세금 규정에 따라 숙박 시설 이용 시 객실 요금에 기반해 도시세가 부과될 수 있습니다. 해당 세금은 체크인 시 숙소로 직접 지불하시기 바랍니다.
+                </td>
+        </tr>
+                </table>
+            </tr>
+        </table>
+            </td>
+        </tr>
+    </table>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+        <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;">
+            <tbody>
+            <tr style="padding:0;margin:0;padding-top: 16px;">
+                <td class="tile" bgcolor="white"
+                    style="border-radius: 8px;padding-bottom: 24px;border:1px solid #c1cbe0;">
+                    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+                           style="font-size: 14px;padding: 0; margin: 0 auto;">
+                        <tbody>
+                        <tr style="padding-bottom: 24px;">
+                            <td id="cancellation_policy_title_text" colspan="3"
+                                style="padding: 16px 24px 0 24px;font-weight: bold; font-size: 18px; line-height: 21px;">
+                                <h2 style="font-size: 1em">예약 취소 정책</h2>
+                            </td>
+                        </tr>
+
+
+                            <tr>
+                                <td id="important_information_title_text" colspan="3"
+                                    style="color: #252c38;line-height: 25px; font-weight: 600;padding: 24px 24px 0 24px">
+                                    [ 중요 사항 ]
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td id="cancellationText_0" colspan="3"
+                                        style="line-height: 14px;color: #252c38;padding: 10px 24px 0 24px">
+                                        예약한 호텔이나 숙소에 체크인하지 않을 경우 노쇼(No-Show)로 간주되며, 예약 요금의 100%가 취소 요금으로 부과됩니다(호텔 정책).
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </center>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <center>
+        <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+        >
+            <tbody>
+            <tr>
+                <td class="tile" id="earning-breakdown-panel" bgcolor="white"
+                    style="padding-bottom: 24px;border-radius: 8px;border:1px solid #c1cbe0;">
+                    <table style="width: 100%">
+                        <tbody>
+                        <tr>
+                            <td colspan="3"
+                                style="padding:0;margin:0;padding-left:24px;padding-right:24px;padding-top:24px;font-weight: bold; font-size: 18px; line-height: 21px;"
+                                id="earning-breakdown-header">
+                                적립
+                            </td>
+                        </tr>
+
+            <tr>
+                <td colspan="2"
+                    style="white-space: nowrap; position:relative;width: 160px; padding: 16px 18px 10px 24px; color: #4a5466; line-height: 25px; vertical-align: top; font-weight: bold;"
+                    id="cashback-title">
+                    캐쉬백 리워드
+                </td>
+                    <td colspan="1"
+                        style="white-space: nowrap; position:relative;padding: 16px 18px 0 0; line-height: 25px; color: #0d1118; vertical-align: top; text-align: right; font-weight: bold;"
+                        id="cashback-usd-amount">
+                        $ 6.8
+                    </td>
+            </tr>
+                <tr>
+                    <td colspan="3"
+                        style="white-space: nowrap; position:relative;padding: 0 18px 0 24px; line-height: 25px; color: #252c38; vertical-align: top; text-align: right; font-weight: normal; font-size: 12px;"
+                        id="cashback-local-amount">
+                        (KRW 9408.0)
+                    </td>
+                </tr>
+                            <tr>
+                                <td colspan="3" style="padding: 0 18px 0 24px; color: #4a5466; line-height: 25px; vertical-align: top; font-weight: normal; font-size: 12px;">
+                                    캐쉬백 리워드는 체크아웃 최대 60일 후에 확인 가능하며, 체크아웃 날짜로부터 최대 120일 동안 요청하실 수 있습니다.. 어떠한 신용카드/현금카드로 리워드를 제공받으실지에 대한 이메일이 송부됩니다. 자세한 내용은 <a id="cashback-terms-link" href="https://www.agoda.com/en-gb/info/agoda-policies.html#8">이용 약관</a>을 참조해 주시기 바랍니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+
+        <center>
+            <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;">
+                <tr>
+                    <td class="tile mobile_padding" bgcolor="white"
+                        style="padding-bottom: 24px;border-radius: 8px;border:1px solid #c1cbe0;">
+                        <table id="self-service-info-id" border=0 cellspacing=0 cellpadding=0 align="center"
+                               style="width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td colspan="3" style="height: 24px; line-height: 24px;margin:0;padding:0"> &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="Margin:0;padding: 0 24px;">
+                                    <h2 style="display: inline-block;font-size: 20px;font-weight: bold;">
+                                        예약 관리하기
+                                    </h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="height: 16px; line-height: 16px;margin:0;padding:0"> &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="Margin:0;padding: 0 24px;">
+                                    <p style="margin: 0;padding: 0; font-size: 14px;">
+                                        아고다의 편리한 셀프서비스 예약 관리 기능을 이용해 언제든지 예약 확정서 다시 받기, 영수증 받기, 특별 요청하기, 대표 투숙객명 변경하기, 예약 취소 및 숙박 날짜 변경하기가 가능합니다.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="height:16px;line-height:16px;margin:0;padding:0">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <!--[if mso]>
+                            <tr>
+                                <td>
+                                    <table width="100%" cellspacing="36px">
+                            <![endif]-->
+                                <tr class="card_item_list_container">
+                                            <!--[if mso]>
+                                        <td class="card_item_block_first" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_first"
+                                                style=" width: 215px;padding-left: 16px;padding-right: 8px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_ShareBookingConfirmation"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_ShareBookingConfirmation" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_email.png"
+                     alt="share booking confirmation icon" aria-label="share booking confirmation icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_ShareBookingConfirmation" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=sendvoucher"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    예약 확정서 다시 받기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    자신 또는 다른 사람에게 예약 확정서를 보낼 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block" style="width: 215px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_SendReceipt"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_SendReceipt" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_send_receipt.png"
+                     alt="send receipt icon" aria-label="send receipt icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_SendReceipt" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=sendreceipt"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    영수증 받기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    업무용으로 필요한 영수증을 받을 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block_last" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_last" style="width: 215px;padding-right: 16px;padding-left: 8px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_MmbSpecialRequest"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_MmbSpecialRequest" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_special_request.png"
+                     alt="special request icon" aria-label="special request icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_MmbSpecialRequest" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=sendspecialrequest"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    특별 요청하기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    숙소에 간이침대, 조식 이용 또는 편의 용품/서비스 추가를 요청할 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                </tr>
+                                <tr class="card_item_list_container">
+                                            <!--[if mso]>
+                                        <td class="card_item_block_first" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_first"
+                                                style=" width: 215px;padding-left: 16px;padding-right: 8px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_MmbCancelBooking"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_MmbCancelBooking" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_cancel_booking.png"
+                     alt="cancel booking icon" aria-label="cancel booking icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_MmbCancelBooking" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=cancellation"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    예약 취소하기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    쉽고 간편하게 온라인으로 예약을 취소할 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block" style="width: 215px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_ChangeDates"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_ChangeDates" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_calendar.png"
+                     alt="change dates icon" aria-label="change dates icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_ChangeDates" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=amenddates"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    숙박 날짜 변경하기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    숙박 날짜를 변경할 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                            <!--[if mso]>
+                                        <td class="card_item_block_last" bgcolor="#eef4fe">
+                                        <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <td class="card_item_block_last" style="width: 215px;padding-right: 16px;padding-left: 8px;">
+                                            <!--<![endif]-->
+
+    <table class="card_item"
+           id="cardItemTableId_ManageGuest"
+           align="center"
+           style="padding:16px;margin:8px 0;vertical-align:top;background-color:#eef4fe;border-radius: 16px;position: relative;width: 100%;height: 184px;"
+           cellspacing=0 cellpadding=0>
+        <tr>
+            <td align="center" style="padding:0;margin:0;">
+                <img id="imgcardItemTableId_ManageGuest" role="img" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/mmb_ic_manage_guest.png"
+                     alt="manage guest icon" aria-label="manage guest icon" width="43" height="43"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;margin:0; padding-top:8px;vertical-align:top;">
+                <a id="link-cardItemTableId_ManageGuest" href="https://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&deep_link_value=agoda%3a%2f%2fmmb%2f%3fbookingToken%3djSkRIxBQ567VvFvEyQXXOA%3d%3d&af_sub3=cd696d0c-8a45-4264-9e23-c9cc46a4a378&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&af_r=https%3a%2f%2fwww.agoda.com%2faccount%2feditbooking.html%3fbookingId%3djSkRIxBQ567VvFvEyQXXOA%3d%3d%26&init=amendguests"
+                   style="Margin:0;color:#1751ae;text-decoration:none">
+                    투숙객 정보 관리하기
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding:0;Margin:0;padding-top: 4px;">
+                <span class="card_item_desc"
+                      style="margin:0;padding:0;color:#24262C;font-size:14px;word-break:break-word;width: 156px;">
+                    대표 투숙객 이름을 변경할 수 있습니다
+                </span>
+            </td>
+        </tr>
+    </table>
+                                        </td>
+                                </tr>
+                            <!--[if mso]>
+                            </table>
+                            </td>
+                            </tr>
+                            <![endif]-->
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+           align="center">
+        <tr>
+            <td
+                     id="customer-information-section" 
+                    class="tile" bgcolor="white"
+                    style="border-top: ;border-radius: 8px;padding-bottom: 24px;border-left:1px solid #c1cbe0;border-right:1px solid #c1cbe0;border-bottom:1px solid #c1cbe0;">
+        <table border=0 cellspacing=0 align="center" cellpadding=0 width="100%">
+            <tr>
+        <td style="margin:0;padding: 24px 24px 0;text-align: left"
+                 id="customer-information-section-title" 
+                
+        >
+    <h2 style="font-weight: bold; font-size: 18px;">더 궁금한 사항이 있으시거나 도움이 필요하신가요?</h2>
+        </td>
+            </tr>
+                <tr>
+                    <td id="customer-information-text-0"
+                        style="margin: 0;padding: 16px 24px 0;font-size:14px;">
+                        예약과 관련해 상담이 필요하신 경우 예약 번호(<strong> 1643647854 </strong>)를 준비해 언제든지 고객센터로 연락해 주시기 바랍니다.
+                    </td>
+                </tr>
+                <tr>
+                    <td id="customer-information-text-1"
+                        style="margin: 0;padding: 16px 24px 0;font-size:14px;">
+                        예약 관련 궁금한 사항은 '자주 묻는 질문(FAQ)'에서 먼저 확인해 주시기 바랍니다
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td-customer-information-contact"
+                        style="margin: 0;padding: 16px 24px 0 24px;">
+    <table align="center" cellpadding="0" cellspacing="0" style="width: 100%">
+        <tr>
+            <td>
+                <table align="center" cellpadding="0" cellspacing="0" style="width: 100%">
+                    <tr>
+                        <td style="height: 8px; line-height: 8px; margin:0; padding:0"> &nbsp;</td>
+                    </tr>
+                    <tr style="background-color: #ffffff;">
+                        <td align="center"
+                            style="margin:0; width:248px;padding:12px;border: 1px #2067da solid;border-radius: 999px;background-color: ;"
+                            id="a-customer-information-contact-href">
+                            <table>
+                                <tr>
+                                    <td style="padding-left: 0" align="center">
+                                        <a
+                                                id="link-a-customer-information-contact-href"
+                                                style="margin:0;
+                                                        padding:0;
+                                                        text-align: center;
+                                                        display: inline;
+                                                        text-decoration: none;
+                                                        color: #2067da;
+                                                        font-size: ;
+                                                        white-space: nowrap;"
+                                                href="https://www.agoda.com/info/contact.html"
+                                                target="_blank"
+                                        >
+                                            자주 묻는 질문(FAQ)과 답변 확인하기
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                    </td>
+                </tr>
+        </table>
+            </td>
+        </tr>
+    </table>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+           align="center">
+        <tr>
+            <td
+                     id="important_notes" 
+                    class="tile" bgcolor="white"
+                    style="border-top: ;border-radius: 8px;padding-bottom: 24px;border-left:1px solid #c1cbe0;border-right:1px solid #c1cbe0;border-bottom:1px solid #c1cbe0;">
+        <table border=0 cellspacing=0 align="center" cellpadding=0 width="100%">
+            <tr>
+        <td style="margin:0;padding: 24px 24px 0;text-align: left"
+                 id="important_notes-title" 
+                colspan="2" 
+        >
+    <h2 style="font-weight: bold; font-size: 18px;">주요 공지사항</h2>
+        </td>
+            </tr>
+            <tr>
+                <td style="line-height:16px;">
+                    <ul style="padding: 16px 24px 0 39px;">
+                            <li id="important_notes_0" style="color: #252c38; line-height: 25px; vertical-align: top;">
+                                <font color='#E03126'>중요 안내:</font> 고객님의 개인 정보 및 결제 정보 보호를 위하여 아고다 플랫폼 외부의 비공식적인 연락 채널을 통해 전화를 하거나 메시지를 보내는 사람에게 개인 정보 또는 결제 정보를 알려주시거나 자금을 이체하지 마시기 바랍니다. 의심스럽거나 사기 행위가 있는 경우 경우 고객 센터로 제보해 주시고 외부로부터의 의심스러운 연락(전화, 이메일, 문자 메시지 등)이 있는 경우 응답하시기 전에 항상 아고다로 확인해 주시기 바랍니다.
+                            </li>
+                            <li id="important_notes_1" style="color: #252c38; line-height: 25px; vertical-align: top;">
+                                <font color='#C22700'>중요 알림:</font> 체크인 시 사진이 있는 유효한 신분증 및 예약에 사용된 신용카드를 반드시 제시해야 합니다. 카드 소유주의 이름과 신분증상의 이름이 일치해야 하며 그렇지 않을 경우 숙소에서 추가 요금을 요구하거나 예약이 이행되지 않을 수 있습니다. 제 3자 예약에 대해 추가 서류를 제출한 경우 또는 다른 결제 방법을 통해 금액을 지불하신 경우 상기 내용을 무시해 주시기 바랍니다.
+                            </li>
+                            <li id="important_notes_2" style="color: #252c38; line-height: 25px; vertical-align: top;">
+                                모든 객실은 체크인 당일에만 보장됩니다. 노쇼(no-show)의 경우 예약이 취소되며 확정 이메일과 예약 시 명시된 취소/노쇼 정책에 따라 처리됩니다.
+                            </li>
+                            <li id="important_notes_3" style="color: #252c38; line-height: 25px; vertical-align: top;">
+                                이 예약의 총 결제 요금에는 미니바 사용, 전화 요금, 세탁 서비스 등은 포함되어 있지 않으며 추가로 발생하는 비용은 숙소에 직접 지불하시기 바랍니다.
+                            </li>
+                            <li id="important_notes_4" style="color: #252c38; line-height: 25px; vertical-align: top;">
+                                조식이 포함된 객실을 예약한 경우, 일부 숙소에서 동반 아동의 조식 요금을 별도로 청구할 수도 있습니다. 이에 해당되는 경우 숙소에 직접 지불하시기 바랍니다. 자세한 사항은 체크인 시 숙소에 문의하시기 바랍니다.
+                            </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+            </td>
+        </tr>
+    </table>
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <!--[if mso]>
+            <tr>
+               <td height="16" style="font-size:30px; line-height:30px;">&nbsp;</td>
+           </tr>
+    <![endif]-->
+    <table class="table_tile_wrapper" style="margin: 16px auto 0;max-width: 650px;width: 100%;"
+           align="center">
+        <tr>
+            <td
+                     id="download_agoda_app" 
+                    class="tile" bgcolor="white"
+                    style="border-top: ;border-radius: 8px;padding-bottom: 24px;border-left:1px solid #c1cbe0;border-right:1px solid #c1cbe0;border-bottom:1px solid #c1cbe0;">
+        <table border=0 cellspacing=0 align="center" cellpadding=0 width="100%">
+            <tr>
+        <td style="margin:0;padding: 24px 24px 0;text-align: left"
+                 id="download_agoda_app-title" 
+                
+        >
+    <h2 style="font-weight: bold; font-size: 18px;">아고다 앱으로 더 간편하게 예약하세요!</h2>
+        </td>
+            </tr>
+            <tr>
+                <td style="margin: 0;padding: 16px 24px 0;">
+                    <table>
+                        <tr>
+                            <td width="100%" style="margin:0;padding: 0;padding-right: 16px;">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td style="padding-bottom: 8px;">
+                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="16"
+                                                        style="vertical-align: top;padding-right: 8px;">
+                                                        <img src="https://cdn6.agoda.net/images/email/booking-confirmation/default/check.png"
+                                                             alt="check icon" width="16">
+                                                    </td>
+                                                    <td style="vertical-align: top;">
+                                                        <p style="margin: 0;padding: 0;font-style: normal;font-weight: 400;line-height: normal;">더 큰 할인 및 특가 상품을 만나보세요</p>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td width="16"
+                                                        style="vertical-align: top;padding-right: 8px;">
+                                                        <img src="https://cdn6.agoda.net/images/email/booking-confirmation/default/check.png"
+                                                             alt="check icon" width="16">
+                                                    </td>
+                                                    <td style="vertical-align: top;">
+                                                        <p style="margin: 0;padding: 0;font-style: normal;font-weight: 400;line-height: normal;">- 언제 어디서나 가능한 예약 관리</p>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                        <tr>
+                                            <td id="download_agoda_app_badge"
+                                                style="margin:0;padding:0;padding-top:16px">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                        <td style="width: 135px; height: 40px; margin-right: 16px;">
+                                                            <a id="appStoreLink" target="_blank"
+                                                               href="https://agoda.onelink.me/1640755593?af_dp=agoda%3A%2F%2Fmmb?bookingToken=sometoken&deep_link_value=agoda%3A%2F%2Fmmb&af_click_lookback=1d&pid=Redirect&c=EmailQRCode&af_siteid=1746555&site_id=1746555&af_sub5=1746555&af_force_deeplink=true"
+                                                               style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;text-decoration:underline;color:#2067da;  display: inline-block; width: 145px; height: 43px;">
+                                                                <img id="appStoreImageUrl"
+                                                                     src="https://cdn6.agoda.net/images/email/booking-confirmation/default/app-store-badge.png"
+                                                                     alt="Download on the App Store"
+                                                                     style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"
+                                                                     width="135" height="40">
+                                                            </a>
+                                                        </td>
+                                                        </td>
+                                                        <td colspan="2">
+                                                        <td style="width: 135px; height: 40px;">
+                                                            <a id="playStoreLink" target="_blank"
+                                                               href="https://agoda.onelink.me/1640755593?af_dp=agoda%3A%2F%2Fmmb?bookingToken=sometoken&deep_link_value=agoda%3A%2F%2Fmmb&af_click_lookback=1d&pid=Redirect&c=EmailQRCode&af_siteid=1746555&site_id=1746555&af_sub5=1746555&af_force_deeplink=true"
+                                                               style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;text-decoration:underline;color:#2067da;  display: inline-block; width: 145px; height: 43px;">
+                                                                <img id="playStoreImageUrl"
+                                                                     src="https://cdn6.agoda.net/images/email/booking-confirmation/default/google-play-badge.png"
+                                                                     alt="Get it on Google Play"
+                                                                     style="border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"
+                                                                     width="135" height="40">
+                                                            </a>
+                                                        </td>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td id="download_agoda_app_qr_code" class="download_app_qr"
+                                style="margin: 0;padding: 0;">
+                            <td style="width: 104px; height: 104px">
+                                <a id="downloadAppQrCodeLink" target="_blank"
+                                   href="https://agoda.onelink.me/1640755593?af_dp=agoda%3A%2F%2Fmmb?bookingToken=sometoken&deep_link_value=agoda%3A%2F%2Fmmb&af_click_lookback=1d&pid=Redirect&c=EmailQRCode&af_siteid=1746555&site_id=1746555&af_sub5=1746555&af_force_deeplink=true"
+                                   style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;font-size:18px;text-decoration:underline;color:#2067da; display: inline-block; width: 104px; height: 104px">
+                                    <img id="downloadAppQrCodeImageUrl"
+                                         src="https://cdn6.agoda.net/images/email/booking-confirmation/default/download-app-qr-code-global.png" alt="Agoda App QR Code"
+                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"
+                                         width="104" height="104">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <table class="transparentTile">
+            <tbody>
+                <tr style="text-align: center;">
+                    <td style="color:#5e6b82;font-size:12px;line-height:19px;padding-top:36px;">
+                            <p style="margin:0;padding-top: 8px;" id="footerText_0">본 메일은 확인용으로 발송되었습니다. 본 메일에 회신하지 마시기 바랍니다.</p>
+                            <p style="margin:0;padding-top: 8px;" id="footerText_1">아고다에서는 ヒルトン東京 (Hilton Tokyo)에 고객님의 예약 관련 사항을 전달하였습니다. 즐거운 여행 하시길 바랍니다.</p>
+                    </td>
+                </tr>
+                <tr style="border-collapse:collapse;">
+                    <td align="center" style="padding:12px 0 0 0;margin:0 auto;max-width: 650px;">
+                        <table width="100%" cellspacing="0" cellpadding="0"
+                               style="border-collapse:collapse;border-spacing:0px;width: 100%;max-width: 650px;margin:0 auto;">
+                            <tr style="border-collapse:collapse;">
+                                <td width="100%" valign="top" align="center" style="padding:0;margin:0;">
+                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                           style="border-collapse:collapse;border-spacing:0px;">
+                                        <tr style="border-collapse:collapse;">
+                                            <td align="center" style="padding:0;margin:0">
+                                                <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0"
+                                                       style="border-collapse:collapse;border-spacing:0px;">
+                                                    <tr style="border-collapse:collapse;">
+                                                        <td style="padding:0;Margin:0px 0px 0px 0px;border-bottom:2px solid #c1cbe0;border-bottom:2px solid #C1CBE0;background:none;height:1px;width:100%;margin:0px;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td style="color:#5e6b82;font-size:12px;line-height:19px;padding-top: 12px;">
+                            <p style="margin:0; padding-bottom: 10px;" id="emailFootNote_0">이메일 발송처: Agoda Company Pte. Ltd., 36 Robinson Road, #20-01 City House, Singapore, 068877</p>
+                            <p style="margin:0; padding-bottom: 10px;" id="emailFootNote_1">아고다는 온라인 판매를 중개하는 역할을 하며, 실제 거래의 당사자가 아닙니다.<br>예약, 이용, 환불 등 상품과 관련된 모든 의무와 책임은 각 판매자에게 있습니다.</p>
+                    </td>
+                </tr>
+            <tr style="text-align: center;">
+                <td style="padding:36px 0px;margin:0;">
+                    <img style="height: 40px;" height="40" src="https://img.agoda.net/images/emailmarketing/spwl_agodatheme/company_logo_footer.png"
+                         role="img" alt="Agoda Logo" aria-label="Agoda Logo" lang="en">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+
+
+</div>
+<img src="https://click.transactional.agoda.com/wf/open?upn=u001.C8gRcK87jQ2ds-2BKrNL0b2nLhX0ugOwZFpfoTMaDAqvLlfOJZspNYfMwOHfcv0p9an5ck3SfhMff2rwsjHIQOz8nzhCCYSIAqdxdBkNm5p8JEm3gdgUibRh-2FU958uBBmALk-2B-2FvJFQaS5KCiw25j0cWyJDXCPYxzmBd6fI49dzRjaAnNoqIl3NLmmA5M3vumTEiZkF1r-2FGLSGsKUArYZh0dimv4fNeJY7FoeyCn2I2pVYE9ukNgZq1CGTFniOarckWtwLFz2FLra4B7sTllyMiae-2BNGddBJNLNJmyn-2Fh6IHXnY39Qs87fGWBslvl4naBPqqq2AsSjevrdG61FIV1ZTMgp3YdN1FF33cOtkhmBMloicSVhVZ10ELU7RcJdfNbDYmITKmMWijqXxLtC32J6umFSR3HoEHqa2sdjFsgG0RbL3fPrr8snOCL3toIGki-2Bnjg7ovffWXRnv3j3f-2Fj8Uuimiw-2BnxfTYvfXPtrjXViHEVvULSbkDAGol5dQce8mI82ZWBWF2IdDyPk9JC9Mox85vYGN2enpUIyYkRExh-2BA-2B4HiJUIvgd4-2Fh4jcsyvXIE0-2FAgBnmq1XnjblPaiZvuntbrJX6AIyqC5z-2FtonEPR8W6qmNGiQKPo1Cbb7XTG4vX0MrBTALfOOuNw5LKLCLwfd-2F2lfkMjWbFdfZQ7uIDtc04WwwKmfYfGpTCYH1lLELohbKmGCCa6s5a160yFZHNiPeAhk4yF9E0W6JzdO3-2FKoDDDkhA2JlIKbSX-2FFL9vKeFgEg7B2BvKoBtUanKpYYxIlWte-2B7QssD5X0zfa8FDqP79CKNkdUg9eVESSRig9w9Pd3XkkptA3lSr-2FIxpMDeD2WvVk8Vnq9OmrLfnoKRixCzLdv9gP1FF8Jp0llVAD0-2F9nmUtNhoPgg-2BJV0-2BvTB4-2FwGf9ka1Nz8G7LvqDV6f6FlKP2xnnI0woExiiF6bZ2IrLZ3omAZy9iaLthruKe6BMkh8WMG6Kl-2FOfVZJS-2FaSQllKhnXDOEwXwZ0jmrzPCnvTkxNyRoyyhCsxY06knSqNUsokr58shFvr-2BpIiG-2Fncu-2BpJSYFQimFKklM9gLZ48y-2BQSHsglsljacsVcR6Cv0PBYrzXiPWisPLo4S-2BCeIQ1BfBsk6ZFGzcO5lqJaudbtutdYuyX8FRVJc77G3XIoWttLMz3z8gKNKF20ojbECcG6i-2ByQISd5RXqRc2YTFuUC7rGvEb0D5TKVR-2FKS2gxCMw32CO6OcVUIj1ITVHdvUmMkUgZjsfpNi0xsLz9wtWsdS-2FoGGgpXBd4x1GG70Pn4P7zkDU0Np0f1gF1W32uU77yRCrjXvhco2kcDtlqpuAtYCTEvhXuKQE7DICuoANnRuc2zKKTdFJTilTLtwkPAVs2qibv3J5-2BfAFn6Y-2BgAlYIfYbooFOj4NKtVMkWTG5I8J0WpptBCG1tGCf9zIdH9aUTRNI5DlGdxZsv1PHhjUlLQe1gm-2BzbdQWwgk4RTHmlZRZjQ22RMZ5M1RibaVBofNS8ZLwIzsLaaUYRYlvZcxsegxdYtuI3ntuVgmKqU2KloX9ReUS009c5FgA2cdr9SDF8lbKKGtD0Fbt0LCWr8QV-2FCFATCw3tPoggBl8qUlRc8ueRwHvqJ7GBb2ISml8N0ciUlmgtlIn8o-2FUXmKIJm-2BWIVyfRYIuGlNbuaWnZq6txhyWmjxvFUHD3-2FzKXEXSdiUC5aZoL0CyNAS9Wi33Y84d6zUAu7A4-2B50-2FXCQySb54JxVEMOS0n-2FT0IjTy1MHzgM0WvDCZde1x6BEnFatwdNZaLPERMjq4948FCroF86HDkATE234IWxqBMHImEoEz5Wm21nF9WWHbwg-2BXJ-2FPUQpFFAg4QmjOo-2F0Y9M-2FQoHvzkv46Y-2BL5RPfWCYDfMxZDvGm5-2BsjGdAXqwef1fEXRJJSNX7ymnj-2F9CO4-2FcFyqbSGUb6i4DOJMzwxGCOseQJqpT4d8eLJBKKMU6CKhXeKv-2B8ak7Zz4jbyBlq-2BWrAzG9Ej7JkySnpXAAbNEBOSH7GTJF-2BdkwNisVon2dYOMIjriHtAbYqRhGutKskX2jZ4IW1e7prdGWN06v3Xoe1sbag7KdqkgbbvVIU2GKnJngVtNoUOMwphaPo1-2FPI3qshQ2lGLujjvOm-2FZmQnhWQslI1KmyCrEEhQuMs1vllzJEXls2joOT7v3qB8koL87A6I-2B7ptMAtDvoIdcqhZ7UP8pw8vJvhciKC3157KHTc0tC8gO6RYECBnP7nm7135Xown-2BNAHBotCdWlWRV-2FLNz4SMGWVL8QaZH0oXzdcs4eLP1Uq81XAT-2FXfML6nx96dp6PcFqgAii-2F7ZvoSO68vDHkdWmzBSr6WusDUSvBwDRiiNKTkObfjhF8Xa33u1ycSVaCQx9beBzglf6vuj1bi7Vd0D-2F37Vb4zzAxqRBNoPO33AVURLCJeWJ-2FfDVR9zE9nueI0cts184Qi2fhaRNiMn23rcb5MCdU1ffhmGuOb7rPNluOBstp-2FjEGij8Y9Q8t656aT6n37mlXUZ6Q1iSJKJRTf0TcsPDc5UWvknBh9VJm10sLAbawzz-2FZzgqyd-2FgGPlQAc24pVi-2Fv3-2Fmmr1jlGBhdZbS16JuoZY-2FYX8WrmxfWNiUqvXp58wzniV2rBu3vxpIgwxzveSMKMmkT7Un-2FLZ7Rp8YipglkgG-2FjXGG8axsoreQH2-2BYOAc5OXd2Log8m35w0dqQoEwILfT9unnYAvqLVPUK8nnwrK-2FWfsRc6Fw6z-2BtLeiMVd7FcWSVq4pvHcmBVJBO85BoG-2BcjUMJlmSzwwP-2F1Bhyo2nfQytrn2jhKMcSVksEOplqLyGzKZHjAWXH8J-2FvvS5MQ80op6r7X76l5mOg3aQmXwRK9fIFaIidgeBtgesFTRBuv4GukKoWdMfe4GWiUovXaQ-2BwU75TInmeEW-2FNYSYD5zQtwhOvBxhCia9zUUqjZzs949W6zmUeSy0OtB3IvUQlYMoh91xqP6BhAbPHfXoXQM80-2B-2F781OluNw-2Fb8fchP4DMvt3bKhVCQ-2BKnCavgwaf8YNF1H0Ng1FHFcS5Ep-2BK2c0U5mgl0dkn7E8H2IDyr0mLYM8U5MkuiA3AQ8FFFyd9gH7gKyyoU-2BzF700iqpa4jNRszUdx2urPFE9kKPhTn9e5AQZygUFR4gC-2FpXKrys3WXR-2BjXX-2F4EacOxx4bDT04CkaQhYRPpfSRptqeGBQEhja3FRW814dTsQMZGUjhxA2-2BT-2F8VWWXENUMGPiAqPIb5b4ZgHfgRZXMvHh9YBI2gNBI694-2Fv01AbEU1t2kSBFDYOURjA-2Fx98jPGGG9YTyDtIZxlhaR-2B9I5oGU7RyiPdbyAnAarFKr2jiKvbQDdJHnXRzqMhK3zB3h21Vm7J3-2BkdiCqKRGkGDcB8WJX750TU8CTrr1LIOZY0u0zj-2BQvUO1hY4ekk3w9gJPRawrkZ-2FX8zyl5kS2NBDwp01bZoUqOps8wwEPOkcrvI8l9NCS1wbHnZJP4FObyeXZ-2FrTCgbn-2FLvOP2zOvgpw7Q7KdGYW373VtN3c-2FVDVWGdM6ZOTOruQnxtX0UHBdF3FbDr79g-3D-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></body>
+</Html>
