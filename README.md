@@ -213,6 +213,281 @@ claude-test/
 └── README.md                     # 이 파일
 ```
 
+## 시스템 아키텍처
+
+### 전체 구조도
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        사용자 (웹 브라우저)                        │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      프론트엔드 (Web UI)                        │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  - HTML/CSS/JavaScript (Vanilla JS)                  │   │
+│  │  - static/app.js: AJAX 통신, UI 이벤트 처리           │   │
+│  │  - templates/index.html: 메인 페이지 템플릿           │   │
+│  └──────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼ (HTTP/AJAX)
+┌─────────────────────────────────────────────────────────────┐
+│                    백엔드 (Flask Web Server)                  │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  app.py - Flask 애플리케이션                          │   │
+│  │  - 라우팅 및 API 엔드포인트 제공                       │   │
+│  │  - 세션 관리 (suite_instances)                        │   │
+│  │  - 요청/응답 처리                                      │   │
+│  └──────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    통합 레이어 (Suite)                         │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  lib/naver_mail_suite.py - NaverMailSuite           │   │
+│  │  - 모든 핵심 기능 통합 관리                            │   │
+│  │  - 컴포넌트 초기화 및 상태 관리                         │   │
+│  │  - 워크플로우 조율                                     │   │
+│  └──────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+                    │           │           │
+          ┌─────────┘           │           └─────────┐
+          ▼                     ▼                     ▼
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│   메일 수신/파싱    │  │   텍스트 요약      │  │   메일 발송       │
+│                  │  │                  │  │                  │
+│ naver_mail_      │  │ text_           │  │ naver_smtp_      │
+│ parser.py        │  │ summarizer.py    │  │ with_           │
+│                  │  │                  │  │ attachments.py   │
+│ - IMAP 연결      │  │ - OpenAI API    │  │ - SMTP 연결      │
+│ - 메일 검색       │  │ - 토큰 계산      │  │ - 메일 전송       │
+│ - 본문 파싱       │  │ - 청크 분할      │  │ - 첨부파일 처리    │
+│ - 첨부파일 다운로드 │  │ - 요약 생성      │  │                  │
+│ - 텍스트 추출     │  │                  │  │                  │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+          │                     │                     │
+          ▼                     ▼                     ▼
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│  네이버 IMAP      │  │  OpenAI API      │  │  네이버 SMTP      │
+│  (imap.naver.com)│  │                  │  │  (smtp.naver.com)│
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    로컬 저장소 (downloads/)                     │
+│  - 메일별 폴더 (email_XXX/)                                    │
+│  - 첨부파일 저장                                               │
+│  - 메타데이터 (metadata.json)                                 │
+│  - 본문 (body.txt, body.html)                                │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 핵심 컴포넌트
+
+#### 1. **프론트엔드 (Web UI)**
+- **기술**: HTML5, CSS3, Vanilla JavaScript
+- **역할**:
+  - 사용자 인터페이스 제공
+  - AJAX를 통한 백엔드 API 호출
+  - 실시간 UI 업데이트
+  - 사용자 입력 검증
+- **주요 파일**:
+  - `templates/index.html`: 메인 페이지 템플릿
+  - `static/style.css`: UI 스타일링
+  - `static/app.js`: 프론트엔드 로직
+
+#### 2. **백엔드 (Flask Server)**
+- **기술**: Flask 3.0+, Python 3.8+
+- **역할**:
+  - RESTful API 엔드포인트 제공
+  - 세션 관리 (suite_instances 딕셔너리)
+  - 요청 라우팅 및 응답 처리
+  - 인증 및 권한 관리
+- **주요 파일**:
+  - `app.py`: Flask 애플리케이션 메인
+- **주요 엔드포인트**:
+  - `/api/connect`: 메일 서버 연결
+  - `/api/fetch_emails`: 메일 목록 조회
+  - `/api/get_email_detail`: 메일 상세 조회
+  - `/api/summarize_email`: 메일 요약
+  - `/api/reply_email`: 메일 회신
+  - `/api/download_attachment`: 첨부파일 다운로드
+
+#### 3. **통합 레이어 (Suite)**
+- **기술**: Python OOP
+- **역할**:
+  - 모든 핵심 기능 통합 관리
+  - 컴포넌트 초기화 및 의존성 주입
+  - 워크플로우 조율 및 오케스트레이션
+  - 상태 관리 및 모니터링
+- **주요 파일**:
+  - `lib/naver_mail_suite.py`: NaverMailSuite 클래스
+- **주요 클래스**:
+  - `NaverMailSuite`: 메인 통합 클래스
+  - `MailProcessor`: 메일 처리 워크플로우
+  - `BatchProcessor`: 대량 메일 처리
+
+#### 4. **메일 수신/파싱 모듈**
+- **기술**: imaplib, email, BeautifulSoup4
+- **역할**:
+  - IMAP 프로토콜을 통한 메일 수신
+  - 메일 본문 파싱 (text/html)
+  - 첨부파일 다운로드 및 저장
+  - 다양한 형식의 첨부파일 텍스트 추출
+- **주요 파일**:
+  - `lib/naver_mail_parser.py`: NaverMailParser 클래스
+- **지원 첨부파일**:
+  - PDF (PyPDF2)
+  - Word (python-docx)
+  - Excel (openpyxl)
+  - PowerPoint (python-pptx)
+  - 텍스트 파일 (txt, csv, json, xml, html 등)
+
+#### 5. **텍스트 요약 모듈**
+- **기술**: OpenAI API, tiktoken
+- **역할**:
+  - LLM을 활용한 텍스트 요약
+  - 토큰 계산 및 최적화
+  - 긴 텍스트 청크 분할 처리
+  - 다양한 요약 스타일 제공
+- **주요 파일**:
+  - `lib/text_summarizer.py`: TextSummarizer 클래스
+- **지원 모델**:
+  - GPT-4o Mini (기본)
+  - GPT-4o
+  - GPT-4 Turbo
+  - GPT-4
+  - GPT-3.5 Turbo
+- **요약 타입**:
+  - brief: 간단 요약
+  - detailed: 상세 요약
+  - bullet: 불릿 포인트
+  - korean: 한국어 최적화
+
+#### 6. **메일 발송 모듈**
+- **기술**: smtplib, email.mime
+- **역할**:
+  - SMTP 프로토콜을 통한 메일 발송
+  - 다양한 MIME 타입 첨부파일 처리
+  - 참조/숨은참조 지원
+  - HTML/텍스트 본문 지원
+- **주요 파일**:
+  - `lib/naver_smtp_with_attachments.py`: NaverSMTPSender 클래스
+- **주요 기능**:
+  - TLS/SSL 암호화 지원
+  - 자동 MIME 타입 감지
+  - 다중 수신자 처리
+
+### 데이터 플로우
+
+#### 메일 조회 플로우
+1. 사용자가 웹 UI에서 메일 조회 요청
+2. JavaScript가 `/api/fetch_emails` 엔드포인트로 AJAX 요청
+3. Flask 서버가 세션에서 NaverMailSuite 인스턴스 조회
+4. NaverMailSuite가 NaverMailParser 호출
+5. NaverMailParser가 IMAP 서버에서 메일 검색 및 다운로드
+6. 첨부파일 다운로드 및 텍스트 추출
+7. 메일 데이터를 `downloads/email_XXX/` 폴더에 저장
+8. 파싱된 데이터를 JSON으로 반환
+9. 웹 UI에 메일 목록 표시
+
+#### 메일 요약 플로우
+1. 사용자가 요약 옵션 선택 (본문/첨부파일, 타입, 모델)
+2. JavaScript가 `/api/summarize_email` 엔드포인트로 AJAX 요청
+3. Flask 서버가 NaverMailSuite.summarize_email_advanced() 호출
+4. NaverMailSuite가 TextSummarizer에 요약 요청
+5. TextSummarizer가 OpenAI API 호출
+6. 토큰 계산 및 필요시 청크 분할
+7. 요약 결과 생성 (본문/첨부파일/통합)
+8. 요약 통계 계산 (토큰, 압축률)
+9. JSON 결과 반환
+10. 웹 UI에 요약 결과 표시
+
+#### 메일 회신 플로우
+1. 사용자가 회신 버튼 클릭
+2. 모달 창에 원본 메일 정보 자동 입력
+3. 사용자가 회신 내용 작성
+4. JavaScript가 `/api/reply_email` 엔드포인트로 AJAX 요청
+5. Flask 서버가 NaverMailSuite.send_email() 호출
+6. NaverMailSuite가 NaverSMTPSender 호출
+7. NaverSMTPSender가 SMTP 서버로 메일 전송
+8. 전송 결과 반환
+9. 웹 UI에 결과 표시
+
+### 세션 관리
+
+```python
+# app.py에서 세션 관리
+suite_instances = {}  # 세션 ID -> NaverMailSuite 인스턴스 매핑
+
+# 로그인 시
+session_id = secrets.token_hex(16)
+suite = NaverMailSuite(username, password, openai_key)
+suite_instances[session_id] = suite
+session['session_id'] = session_id
+
+# API 요청 시
+session_id = session.get('session_id')
+suite = suite_instances[session_id]
+# suite 사용하여 작업 수행
+
+# 로그아웃 시
+suite.mail_parser.close()
+del suite_instances[session_id]
+session.clear()
+```
+
+### 파일 저장 구조
+
+```
+downloads/
+├── email_123/
+│   ├── metadata.json       # 메일 메타데이터
+│   ├── body.txt           # 텍스트 본문
+│   ├── body.html          # HTML 본문
+│   ├── attachment1.pdf    # 첨부파일 1
+│   └── attachment2.docx   # 첨부파일 2
+├── email_124/
+│   └── ...
+└── email_125/
+    └── ...
+```
+
+### 보안 아키텍처
+
+1. **인증**:
+   - 네이버 앱 비밀번호 사용 (계정 비밀번호 X)
+   - 세션 기반 인증 (Flask session)
+   - 세션 ID는 secrets.token_hex()로 생성
+
+2. **통신 암호화**:
+   - IMAP: SSL/TLS (포트 993)
+   - SMTP: STARTTLS (포트 587)
+   - OpenAI API: HTTPS
+
+3. **데이터 보호**:
+   - API 키는 환경 변수 또는 세션에만 저장
+   - 다운로드 파일은 로컬 저장소에만 보관
+   - 세션 타임아웃 24시간
+
+### 확장성 고려사항
+
+1. **수평 확장**:
+   - 세션 저장소를 Redis로 전환 가능
+   - 다중 Flask 워커 지원 (Gunicorn)
+
+2. **기능 확장**:
+   - 플러그인 아키텍처로 새로운 요약 엔진 추가 가능
+   - 다른 메일 서비스 지원 (Gmail, Outlook 등)
+
+3. **성능 최적화**:
+   - 비동기 처리 (Celery + Redis)
+   - 캐싱 레이어 추가
+   - 데이터베이스 도입 (메일 메타데이터 저장)
+
 ## API 엔드포인트
 
 | 엔드포인트 | 메서드 | 설명 |
