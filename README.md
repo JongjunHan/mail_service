@@ -647,7 +647,7 @@ NaverMailSuite
 ## 프로젝트 구조
 
 ```
-claude-test/
+mail_service/
 ├── app.py                         # Flask 웹 서버
 ├── lib/                           # 핵심 라이브러리
 │   ├── __init__.py               # 패키지 초기화
